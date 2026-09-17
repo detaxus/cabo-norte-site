@@ -18,3 +18,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# =========================================================
+# CABO NORTE — PRIVATE ADMINISTRATIVE DATA
+# =========================================================
+
+private-data/

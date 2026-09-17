@@ -1,23 +1,1819 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+/* =========================================================
+   CABO NORTE — HOME
+   Palette: green / gold / red / cream / charcoal only
+   ========================================================= */
 
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+.hero {
+  --hero-left: clamp(90px, 14vw, 230px);
+  --hero-rail-width: clamp(66px, 5vw, 82px);
+  --hero-gap: clamp(30px, 3vw, 48px);
+
   position: relative;
+
+  width: 100%;
+  height: clamp(300px, 36vw, 430px);
+
   overflow: hidden;
+  isolation: isolate;
+
+  background: #18352b;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+/* =========================================================
+   HERO BACKGROUNDS
+   ========================================================= */
+
+.heroBackgrounds,
+.heroBackground {
+  position: absolute;
+  inset: 0;
 }
 
-.buttons {
+.heroBackground {
+  z-index: -4;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+  transform: scale(1.018);
+
+  transition:
+    opacity 1.8s ease,
+    transform 9s ease;
+}
+
+.heroBackgroundActive {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =========================================================
+   HERO OVERLAY
+   ========================================================= */
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: -3;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(24, 53, 43, 0.96) 0%,
+      rgba(24, 53, 43, 0.88) 14%,
+      rgba(24, 53, 43, 0.69) 30%,
+      rgba(24, 53, 43, 0.38) 50%,
+      rgba(24, 53, 43, 0.12) 69%,
+      rgba(24, 53, 43, 0.03) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(24, 53, 43, 0.10) 0%,
+      rgba(27, 33, 30, 0.28) 100%
+    );
+}
+
+/* =========================================================
+   HERO RAIL
+   ========================================================= */
+
+.heroRail {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: var(--hero-left);
+
+  width: var(--hero-rail-width);
+
+  z-index: 5;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(24, 53, 43, 0.99) 0%,
+      rgba(23, 58, 45, 0.97) 100%
+    );
+
+  border-left:
+    1px solid
+    rgba(181, 138, 40, 0.30);
+
+  border-right:
+    1px solid
+    rgba(181, 138, 40, 0.92);
+}
+
+.heroRail::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 19px;
+
+  width: 1px;
+
+  background:
+    rgba(181, 138, 40, 0.62);
+}
+
+.heroRail::after {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  right: 10px;
+
+  width: 1px;
+
+  background:
+    rgba(181, 138, 40, 0.62);
+}
+
+.heroRailInner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
 }
+
+.heroRailInner::before,
+.heroRailInner::after {
+  content: '';
+
+  position: absolute;
+
+  left: 50%;
+
+  width: 1px;
+
+  background:
+    rgba(181, 138, 40, 0.34);
+}
+
+.heroRailInner::before {
+  top: 0;
+  height: calc(50% - 38px);
+}
+
+.heroRailInner::after {
+  bottom: 0;
+  height: calc(50% - 38px);
+}
+
+.railBorderLeft,
+.railBorderRight {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 1px;
+
+  pointer-events: none;
+}
+
+.railBorderLeft {
+  left: 0;
+
+  background:
+    rgba(181, 138, 40, 0.20);
+}
+
+.railBorderRight {
+  right: 0;
+
+  background:
+    rgba(181, 138, 40, 0.16);
+}
+
+.railTeixo {
+  position: relative;
+
+  z-index: 4;
+
+  width:
+    clamp(44px, 3.5vw, 52px);
+
+  height:
+    clamp(44px, 3.5vw, 52px);
+
+  object-fit:
+    contain;
+}
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.heroContent {
+  position: relative;
+
+  z-index: 4;
+
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+
+  padding:
+    0
+    3rem
+    0
+    calc(
+      var(--hero-left)
+      + var(--hero-rail-width)
+      + var(--hero-gap)
+    );
+
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.heroCopy {
+  width:
+    min(590px, 48vw);
+
+  color:
+    #f5f2e8;
+}
+
+.heroKicker {
+  margin-bottom:
+    0.58rem;
+
+  color:
+    #b58a28;
+
+  font-size:
+    clamp(0.69rem, 0.72vw, 0.77rem);
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.31em;
+
+  line-height:
+    1.2;
+}
+
+.heroCopy h1 {
+  margin:
+    0;
+
+  color:
+    #f5f2e8;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size:
+    clamp(4.4rem, 6.8vw, 6.7rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    0.88;
+
+  letter-spacing:
+    -0.048em;
+}
+
+.heroMotto {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    0.72rem;
+
+  width:
+    fit-content;
+
+  margin-top:
+    0.68rem;
+
+  color:
+    #b58a28;
+
+  white-space:
+    nowrap;
+}
+
+.heroMotto .mottoLine {
+  width:
+    54px;
+
+  height:
+    1px;
+
+  flex:
+    0 0 54px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(181, 138, 40, 0.22),
+      rgba(181, 138, 40, 0.96)
+    );
+}
+
+.heroMotto .mottoLine:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(181, 138, 40, 0.96),
+      rgba(181, 138, 40, 0.22)
+    );
+}
+
+.heroMotto em {
+  color:
+    #b58a28;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size:
+    clamp(1.18rem, 1.5vw, 1.38rem);
+
+  font-style:
+    italic;
+
+  font-weight:
+    500;
+}
+
+.heroDescription {
+  width:
+    min(500px, 100%);
+
+  margin:
+    1rem 0 0;
+
+  color:
+    rgba(245, 242, 232, 0.88);
+
+  font-size:
+    clamp(0.84rem, 0.9vw, 0.96rem);
+
+  line-height:
+    1.62;
+}
+
+.heroActions {
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    0.65rem;
+
+  margin-top:
+    1.25rem;
+}
+
+.heroButton {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    0.62rem;
+
+  min-height:
+    39px;
+
+  padding:
+    0.5rem 0.9rem;
+
+  color:
+    #f5f2e8;
+
+  background:
+    rgba(24, 53, 43, 0.58);
+
+  border:
+    1px solid
+    #b58a28;
+
+  border-radius:
+    3px;
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    600;
+
+  text-decoration:
+    none;
+}
+
+.heroButton:hover {
+  color:
+    #f5f2e8;
+
+  background:
+    rgba(24, 53, 43, 0.92);
+
+  border-color:
+    #b58a28;
+
+  text-decoration:
+    none;
+}
+
+.heroButton span:last-child {
+  color:
+    #b58a28;
+}
+
+/* =========================================================
+   SHARED SECTIONS
+   ========================================================= */
+
+.infoSection,
+.communitySection,
+.todaySection {
+  box-sizing:
+    border-box;
+
+  padding:
+    3.4rem
+    2rem
+    3.6rem;
+}
+
+.infoSection {
+  background:
+    #f5f2e8;
+}
+
+.communitySection {
+  background:
+    #18352b;
+}
+
+.todaySection {
+  background:
+    #1b211e;
+}
+
+.sectionHeader {
+  width:
+    min(1080px, 100%);
+
+  margin:
+    0 auto 1.8rem;
+
+  text-align:
+    center;
+}
+
+.headingOrnament {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    0.5rem;
+
+  margin-bottom:
+    0.36rem;
+}
+
+.headingOrnament span {
+  width:
+    110px;
+
+  height:
+    1px;
+
+  background:
+    rgba(181, 138, 40, 0.64);
+}
+
+.headingOrnament b {
+  color:
+    #b58a28;
+
+  font-size:
+    0.75rem;
+
+  font-weight:
+    600;
+}
+
+.sectionHeader h2 {
+  margin:
+    0;
+
+  color:
+    #18352b;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size:
+    1.75rem;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.1;
+}
+
+.communitySection .sectionHeader h2,
+.todaySection .sectionHeader h2 {
+  color:
+    #f5f2e8;
+}
+
+.sectionIntro {
+  max-width:
+    650px;
+
+  margin:
+    0.65rem auto 0;
+
+  color:
+    rgba(245, 242, 232, 0.70);
+
+  font-size:
+    0.8rem;
+
+  line-height:
+    1.55;
+}
+
+/* =========================================================
+   AT A GLANCE
+   ========================================================= */
+
+.glanceGrid {
+  width:
+    min(1080px, 100%);
+
+  margin:
+    0 auto;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  border:
+    1px solid
+    #b58a28;
+
+  background:
+    #f5f2e8;
+}
+
+.glanceItem {
+  min-height:
+    112px;
+
+  box-sizing:
+    border-box;
+
+  padding:
+    1.35rem 1.5rem;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    center;
+
+  gap:
+    0.4rem;
+}
+
+.glanceItem:nth-child(3n + 1),
+.glanceItem:nth-child(3n + 2) {
+  border-right:
+    1px solid
+    rgba(181, 138, 40, 0.36);
+}
+
+.glanceItem:nth-child(-n + 3) {
+  border-bottom:
+    1px solid
+    rgba(181, 138, 40, 0.36);
+}
+
+.glanceLabel {
+  color:
+    #9e2f2f;
+
+  font-size:
+    0.63rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.16em;
+
+  text-transform:
+    uppercase;
+}
+
+.glanceItem strong {
+  color:
+    #18352b;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size:
+    1.12rem;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.25;
+}
+
+/* =========================================================
+   COMMUNITY
+   ========================================================= */
+
+.communityGrid {
+  width:
+    min(1080px, 100%);
+
+  margin:
+    0 auto;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  border:
+    1px solid
+    #b58a28;
+
+  background:
+    #18352b;
+}
+
+.communityCard {
+  position:
+    relative;
+
+  min-height:
+    195px;
+
+  box-sizing:
+    border-box;
+
+  padding:
+    1.65rem 1.3rem;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    0.72rem;
+
+  color:
+    #f5f2e8;
+
+  text-align:
+    center;
+
+  text-decoration:
+    none;
+
+  border-top:
+    4px solid
+    transparent;
+
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.communityCard:not(:last-child) {
+  border-right:
+    1px solid
+    rgba(181, 138, 40, 0.46);
+}
+
+.communityCard:hover {
+  color:
+    #f5f2e8;
+
+  transform:
+    translateY(-2px);
+
+  text-decoration:
+    none;
+}
+
+.communityGreen {
+  background:
+    rgba(24, 53, 43, 0.98);
+
+  border-top-color:
+    #b58a28;
+}
+
+.communityGold {
+  background:
+    rgba(181, 138, 40, 0.16);
+
+  border-top-color:
+    #b58a28;
+}
+
+.communityRed {
+  background:
+    rgba(158, 47, 47, 0.18);
+
+  border-top-color:
+    #9e2f2f;
+}
+
+.communityCream {
+  background:
+    rgba(245, 242, 232, 0.10);
+
+  border-top-color:
+    #f5f2e8;
+}
+
+.communityIcon svg {
+  width:
+    35px;
+
+  height:
+    35px;
+
+  fill:
+    none;
+
+  stroke:
+    #b58a28;
+
+  stroke-width:
+    2;
+
+  stroke-linecap:
+    round;
+
+  stroke-linejoin:
+    round;
+}
+
+.communityRed .communityIcon svg {
+  stroke:
+    #9e2f2f;
+}
+
+.communityCream .communityIcon svg {
+  stroke:
+    #f5f2e8;
+}
+
+.communityContent h3 {
+  margin:
+    0;
+
+  color:
+    #f5f2e8;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size:
+    1.18rem;
+
+  font-weight:
+    600;
+}
+
+.communityContent p {
+  margin:
+    0.25rem 0 0;
+
+  color:
+    rgba(245, 242, 232, 0.70);
+
+  font-size:
+    0.72rem;
+
+  line-height:
+    1.45;
+}
+
+.communityStatus {
+  margin-top:
+    0.15rem;
+
+  color:
+    #b58a28;
+
+  font-size:
+    0.60rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.14em;
+
+  text-transform:
+    uppercase;
+}
+
+.communityRed .communityStatus {
+  color:
+    #9e2f2f;
+}
+
+.communityCream .communityStatus {
+  color:
+    #f5f2e8;
+}
+
+/* =========================================================
+   THE KINGDOM TODAY
+   ========================================================= */
+
+.todaySection {
+  color:
+    #f5f2e8;
+}
+
+.todayStatsGrid {
+  width:
+    min(1080px, 100%);
+
+  margin:
+    0 auto;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  border:
+    1px solid
+    #b58a28;
+}
+
+.todayStat {
+  min-height:
+    215px;
+
+  box-sizing:
+    border-box;
+
+  padding:
+    1.55rem 1rem;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    0.62rem;
+
+  text-align:
+    center;
+
+  border-top:
+    5px solid
+    #b58a28;
+
+  border-right:
+    1px solid
+    rgba(181, 138, 40, 0.36);
+}
+
+.todayStat:last-child {
+  border-right:
+    none;
+}
+
+.todayGreen {
+  background:
+    rgba(24, 53, 43, 0.98);
+
+  border-top-color:
+    #b58a28;
+}
+
+.todayGold {
+  background:
+    rgba(181, 138, 40, 0.18);
+
+  border-top-color:
+    #b58a28;
+}
+
+.todayRed {
+  background:
+    rgba(158, 47, 47, 0.20);
+
+  border-top-color:
+    #9e2f2f;
+}
+
+.todayStatIcon {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+}
+
+.todayStatIcon svg {
+  width:
+    35px;
+
+  height:
+    35px;
+
+  fill:
+    none;
+
+  stroke:
+    #b58a28;
+
+  stroke-width:
+    2;
+
+  stroke-linecap:
+    round;
+
+  stroke-linejoin:
+    round;
+}
+
+.todayRed .todayStatIcon svg {
+  stroke:
+    #9e2f2f;
+}
+
+.todayStat strong {
+  color:
+    #f5f2e8;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size:
+    clamp(2.1rem, 4vw, 3.35rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    0.95;
+}
+
+.todayStat span {
+  color:
+    rgba(245, 242, 232, 0.74);
+
+  font-size:
+    0.64rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.12em;
+
+  text-transform:
+    uppercase;
+}
+
+/* =========================================================
+   CURRENT ACTIVITY
+   ========================================================= */
+
+.currentActivity {
+  width:
+    min(1080px, 100%);
+
+  margin:
+    1.2rem auto 0;
+
+  box-sizing:
+    border-box;
+
+  padding:
+    1.4rem
+    1.55rem;
+
+  border:
+    1px solid
+    #b58a28;
+
+  border-left:
+    5px solid
+    #9e2f2f;
+
+  background:
+    #18352b;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    0.65rem;
+}
+
+.currentActivityHeader {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    1rem;
+}
+
+.currentActivityHeader h3 {
+  margin:
+    0.25rem 0 0;
+
+  color:
+    #f5f2e8;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size:
+    1.25rem;
+
+  font-weight:
+    600;
+}
+
+.currentActivityHeader > svg {
+  flex:
+    0 0 auto;
+
+  width:
+    32px;
+
+  height:
+    32px;
+
+  fill:
+    none;
+
+  stroke:
+    #9e2f2f;
+
+  stroke-width:
+    2;
+
+  stroke-linecap:
+    round;
+
+  stroke-linejoin:
+    round;
+}
+
+.activityEyebrow {
+  color:
+    #b58a28;
+
+  font-size:
+    0.59rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.16em;
+}
+
+.activityTimestamp {
+  color:
+    rgba(245, 242, 232, 0.58);
+
+  font-size:
+    0.67rem;
+}
+
+/* =========================================================
+   RECENT DEVELOPMENTS
+   ========================================================= */
+
+.recentActivity {
+  width:
+    min(1080px, 100%);
+
+  margin:
+    1.55rem auto 0;
+}
+
+.recentActivityHeader {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    0.75rem;
+
+  margin-bottom:
+    0.75rem;
+}
+
+.recentActivityRule {
+  flex:
+    1;
+
+  height:
+    1px;
+
+  background:
+    rgba(181, 138, 40, 0.44);
+}
+
+.activityList {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  border-top:
+    1px solid
+    rgba(181, 138, 40, 0.34);
+}
+
+.activityItem {
+  display:
+    grid;
+
+  grid-template-columns:
+    44px
+    1fr
+    24px;
+
+  align-items:
+    center;
+
+  gap:
+    1rem;
+
+  padding:
+    1rem 0.4rem;
+
+  color:
+    #f5f2e8;
+
+  border-bottom:
+    1px solid
+    rgba(181, 138, 40, 0.24);
+
+  text-decoration:
+    none;
+}
+
+.activityItem:hover {
+  color:
+    #f5f2e8;
+
+  background:
+    rgba(181, 138, 40, 0.06);
+
+  text-decoration:
+    none;
+}
+
+.activityNumber {
+  color:
+    #b58a28;
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    800;
+}
+
+.activityText {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    0.15rem;
+}
+
+.activityText strong {
+  color:
+    #f5f2e8;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size:
+    0.98rem;
+
+  font-weight:
+    600;
+}
+
+.activityText small {
+  color:
+    rgba(245, 242, 232, 0.58);
+
+  font-size:
+    0.67rem;
+}
+
+.activityArrow {
+  color:
+    #b58a28;
+
+  text-align:
+    right;
+}
+
+.noActivity {
+  min-height:
+    82px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    0.85rem;
+
+  color:
+    rgba(245, 242, 232, 0.62);
+}
+
+.noActivity > span {
+  color:
+    #9e2f2f;
+
+  font-size:
+    1.1rem;
+}
+
+.noActivity p {
+  margin:
+    0;
+
+  font-size:
+    0.76rem;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+  .hero {
+    --hero-left:
+      clamp(70px, 10vw, 140px);
+  }
+
+}
+
+@media (max-width: 980px) {
+
+  .hero {
+    --hero-left:
+      42px;
+
+    --hero-rail-width:
+      60px;
+
+    --hero-gap:
+      28px;
+
+    height:
+      410px;
+  }
+
+  .heroContent {
+    padding-right:
+      32px;
+  }
+
+  .glanceGrid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .glanceItem:nth-child(3n + 1),
+  .glanceItem:nth-child(3n + 2) {
+    border-right:
+      none;
+  }
+
+  .glanceItem:nth-child(odd) {
+    border-right:
+      1px solid
+      rgba(181, 138, 40, 0.36);
+  }
+
+  .glanceItem:nth-child(-n + 4) {
+    border-bottom:
+      1px solid
+      rgba(181, 138, 40, 0.36);
+  }
+
+  .communityGrid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .communityCard:nth-child(2) {
+    border-right:
+      none;
+  }
+
+  .communityCard:nth-child(-n + 2) {
+    border-bottom:
+      1px solid
+      rgba(181, 138, 40, 0.46);
+  }
+
+  .todayStatsGrid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .todayStat:nth-child(2) {
+    border-right:
+      none;
+  }
+
+  .todayStat:nth-child(-n + 2) {
+    border-bottom:
+      1px solid
+      rgba(181, 138, 40, 0.36);
+  }
+
+}
+
+@media (max-width: 640px) {
+
+  .hero {
+    --hero-left:
+      12px;
+
+    --hero-rail-width:
+      56px;
+
+    --hero-gap:
+      20px;
+
+    height:
+      500px;
+  }
+
+  .heroRail::before {
+    left:
+      11px;
+  }
+
+  .heroRail::after {
+    right:
+      7px;
+  }
+
+  .heroContent {
+    padding-right:
+      1rem;
+  }
+
+  .heroCopy h1 {
+    font-size:
+      clamp(3.3rem, 16vw, 4.8rem);
+  }
+
+  .heroDescription {
+    max-width:
+      350px;
+
+    font-size:
+      0.72rem;
+  }
+
+  .heroActions {
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+  }
+
+  .heroButton {
+    max-width:
+      280px;
+  }
+
+  .infoSection,
+  .communitySection,
+  .todaySection {
+    padding:
+      2.5rem
+      1rem
+      2.8rem;
+  }
+
+  .headingOrnament span {
+    width:
+      60px;
+  }
+
+  .glanceGrid,
+  .communityGrid,
+  .todayStatsGrid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .glanceItem,
+  .communityCard,
+  .todayStat {
+    border-right:
+      none !important;
+  }
+
+  .glanceItem:not(:last-child),
+  .communityCard:not(:last-child),
+  .todayStat:not(:last-child) {
+    border-bottom:
+      1px solid
+      rgba(181, 138, 40, 0.36);
+  }
+
+  .glanceItem {
+    min-height:
+      94px;
+  }
+
+  .communityCard {
+    min-height:
+      165px;
+  }
+
+  .todayStat {
+    min-height:
+      175px;
+  }
+
+  .currentActivityHeader {
+    align-items:
+      flex-start;
+  }
+
+  .activityItem {
+    grid-template-columns:
+      36px
+      1fr
+      18px;
+
+    gap:
+      0.65rem;
+  }
+
+}
+
+/* =========================================================
+   CABO NORTE — UNIFORMIZAÇÃO DAS CAIXAS DA HOME
+   Somente paleta institucional, sem variações entre caixas
+   ========================================================= */
+
+.communityCard,
+.communityGreen,
+.communityGold,
+.communityRed,
+.communityCream,
+.todayStat,
+.todayGreen,
+.todayGold,
+.todayRed {
+  background: #18352b;
+  color: #f5f2e8;
+}
+
+.communityCard {
+  border-top-color: #b58a28;
+}
+
+.communityCard .communityIcon svg,
+.todayStat .todayStatIcon svg {
+  stroke: #b58a28;
+}
+
+.communityCard .communityStatus {
+  color: #b58a28;
+}
+
+.todayStat {
+  border-top-color: #b58a28;
+}
+
+.todayStat strong,
+.communityContent h3 {
+  color: #f5f2e8;
+}
+
+.todayStat span,
+.communityContent p {
+  color: rgba(245, 242, 232, 0.72);
+}
+
+.todayRed .todayStatIcon svg,
+.communityRed .communityIcon svg {
+  stroke: #b58a28;
+}
+
+.todayRed {
+  border-top-color: #b58a28;
+}
+
+.communityRed .communityStatus,
+.communityCream .communityStatus {
+  color: #b58a28;
+}
+
+
+/* =========================================================
+   CABO NORTE — PALETA SOBRIA FINAL DA HOME
+   ========================================================= */
+
+/* Fundos gerais */
+.infoSection,
+.communitySection,
+.todaySection {
+  background: #ffffff;
+}
+
+/* Caixas: diferença sutil em relação ao fundo */
+.glanceGrid,
+.communityGrid,
+.todayStatsGrid {
+  background: #f5f2e8;
+}
+
+/* Bordas institucionais */
+.glanceGrid,
+.communityGrid,
+.todayStatsGrid,
+.currentActivity {
+  border-color: #b58a28;
+}
+
+/* COMMUNITY — mesma aparência para todas as caixas */
+.communityCard,
+.communityGreen,
+.communityGold,
+.communityRed,
+.communityCream {
+  background: #f5f2e8;
+  color: #18352b;
+  border-top-color: #b58a28;
+}
+
+.communityCard .communityIcon svg,
+.communityGreen .communityIcon svg,
+.communityGold .communityIcon svg,
+.communityRed .communityIcon svg,
+.communityCream .communityIcon svg {
+  stroke: #b58a28;
+}
+
+.communityContent h3 {
+  color: #18352b;
+}
+
+.communityContent p {
+  color: #1b211e;
+}
+
+.communityStatus,
+.communityRed .communityStatus,
+.communityCream .communityStatus {
+  color: #b58a28;
+}
+
+/* THE KINGDOM TODAY — fundo branco + painéis creme */
+.todayStat,
+.todayGreen,
+.todayGold,
+.todayRed {
+  background: #f5f2e8;
+  color: #18352b;
+  border-top-color: #b58a28;
+}
+
+.todayStat strong {
+  color: #18352b;
+}
+
+.todayStat span {
+  color: #1b211e;
+}
+
+.todayStat .todayStatIcon svg,
+.todayRed .todayStatIcon svg {
+  stroke: #b58a28;
+}
+
+/* Atividade atual */
+.currentActivity {
+  background: #f5f2e8;
+  border-left-color: #b58a28;
+}
+
+.currentActivityHeader h3 {
+  color: #18352b;
+}
+
+.currentActivityHeader > svg {
+  stroke: #b58a28;
+}
+
+.activityEyebrow {
+  color: #b58a28;
+}
+
+.activityTimestamp {
+  color: #1b211e;
+}
+
+/* Desenvolvimentos recentes */
+.activityList {
+  border-top-color: rgba(181, 138, 40, 0.40);
+}
+
+.activityItem {
+  color: #18352b;
+  border-bottom-color: rgba(181, 138, 40, 0.28);
+}
+
+.activityItem:hover {
+  color: #18352b;
+  background: rgba(181, 138, 40, 0.08);
+}
+
+.activityNumber {
+  color: #b58a28;
+}
+
+.activityText strong {
+  color: #18352b;
+}
+
+.activityText small {
+  color: #1b211e;
+}
+
+.activityArrow {
+  color: #b58a28;
+}
+
+.noActivity {
+  color: #1b211e;
+}
+
+.noActivity > span {
+  color: #b58a28;
+}
+
+/* Cabeçalhos das seções */
+.communitySection .sectionHeader h2,
+.todaySection .sectionHeader h2 {
+  color: #18352b;
+}
+
+/* Linhas ornamentais */
+.headingOrnament span {
+  background: rgba(181, 138, 40, 0.64);
+}
+
+.headingOrnament b {
+  color: #b58a28;
+}
+
+/* Remoção de qualquer acento vermelho herdado */
+.communityRed,
+.todayRed {
+  background: #f5f2e8;
+  border-top-color: #b58a28;
+}
+
+.communityRed .communityIcon svg,
+.todayRed .todayStatIcon svg {
+  stroke: #b58a28;
+}
+
+.communityRed .communityStatus {
+  color: #b58a28;
+}
+
+
+/* =========================================================
+   CORREÇÕES FINAIS
+   ========================================================= */
+
+.glanceLabel {
+  color: #18352b;
+}
+

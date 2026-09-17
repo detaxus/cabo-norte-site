@@ -1,30 +1,1066 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+/* =========================================================
+   CABO NORTE — GLOBAL IDENTITY
+   ========================================================= */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --cabo-green: #17382d;
+  --cabo-green-dark: #0d251d;
+  --cabo-green-deep: #071b14;
+
+  --cabo-gold: #b58a28;
+  --cabo-gold-light: #c9a04c;
+
+  --cabo-cream: #f5f0e4;
+  --cabo-paper: #f8f5ed;
+
+  --cabo-charcoal: #1d2823;
+  --cabo-muted: #636a65;
+
+  --ifm-color-primary: #17382d;
+  --ifm-color-primary-dark: #102d24;
+  --ifm-color-primary-darker: #0e2921;
+  --ifm-color-primary-darkest: #091b15;
+
+  --ifm-color-primary-light: #244b3d;
+  --ifm-color-primary-lighter: #2a5545;
+  --ifm-color-primary-lightest: #396a59;
+
+  --ifm-background-color:
+    var(--cabo-paper);
+
+  --ifm-background-surface-color:
+    var(--cabo-paper);
+
+  --ifm-font-family-base:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --ifm-heading-font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  --ifm-navbar-height:
+    45px;
+
+  --ifm-code-font-size:
+    90%;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+/* =========================================================
+   DOCUMENT
+   ========================================================= */
+
+html {
+  min-height:
+    100%;
+
+  background:
+    var(--cabo-green-deep);
+}
+
+body {
+  margin:
+    0;
+
+  background:
+    var(--cabo-paper);
+
+  color:
+    var(--cabo-charcoal);
+}
+
+#__docusaurus {
+  min-height:
+    100vh;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+}
+
+.main-wrapper {
+  flex:
+    1 0 auto;
+
+  background:
+    var(--cabo-paper);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+a {
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+  height:
+    45px;
+
+  padding:
+    0
+    1.35rem;
+
+  background:
+    rgba(6, 29, 22, 0.985);
+
+  border-bottom:
+    1px solid
+    rgba(181, 138, 40, 0.28);
+
+  box-shadow:
+    0 1px 0
+    rgba(255, 255, 255, 0.025);
+
+  backdrop-filter:
+    blur(8px);
+}
+
+.navbar__inner {
+  width:
+    100%;
+
+  max-width:
+    none;
+}
+
+.navbar__brand {
+  height:
+    45px;
+
+  margin-right:
+    1.7rem;
+}
+
+.navbar__logo {
+  width:
+    34px;
+
+  height:
+    34px;
+
+  object-fit:
+    contain;
+}
+
+.navbar__title {
+  color:
+    #f7f5ef;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    1rem;
+
+  font-weight:
+    500;
+}
+
+.navbar__link {
+  position:
+    relative;
+
+  height:
+    45px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  padding:
+    0
+    0.75rem;
+
+  color:
+    rgba(247, 245, 239, 0.87);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    0.67rem;
+}
+
+.navbar__link:hover {
+  color:
+    #fff;
+
+  text-decoration:
+    none;
+}
+
+.navbar__link--active {
+  color:
+    #d0aa50;
+}
+
+.navbar__link--active::after {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  left:
+    50%;
+
+  bottom:
+    0;
+
+  width:
+    23px;
+
+  height:
+    2px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    var(--cabo-gold);
+}
+
+.navbar__search {
+  margin-left:
+    0.4rem;
+}
+
+.navbar__search-input {
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  border-color:
+    rgba(247, 245, 239, 0.2);
+
+  color:
+    #f7f5ef;
+}
+
+@media (max-width: 996px) {
+
+  .navbar {
+    padding:
+      0
+      0.9rem;
+  }
+
+  .navbar__toggle {
+    color:
+      #f7f5ef;
+  }
+
+  .navbar-sidebar {
+    background:
+      var(--cabo-green-deep);
+  }
+
+  .navbar-sidebar .navbar__link {
+    color:
+      #f7f5ef;
+  }
+
+}
+
+/* =========================================================
+   INSTITUTIONAL PAGE HERO
+   ========================================================= */
+
+.cn-page-hero {
+  padding:
+    5.5rem
+    2rem
+    4rem;
+
+  background:
+    var(--cabo-paper);
+
+  border-bottom:
+    1px solid
+    rgba(181, 138, 40, 0.26);
+}
+
+.cn-page-hero-inner {
+  width:
+    min(1080px, 100%);
+
+  margin:
+    0
+    auto;
+}
+
+.cn-section-meta {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    0.9rem;
+
+  color:
+    var(--cabo-gold);
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.22em;
+}
+
+.cn-section-meta span:first-child {
+  opacity:
+    0.65;
+}
+
+.cn-page-hero h1 {
+  margin:
+    0.8rem
+    0
+    0;
+
+  color:
+    var(--cabo-green);
+
+  font-size:
+    clamp(4rem, 8vw, 7rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    0.9;
+
+  letter-spacing:
+    -0.05em;
+}
+
+.cn-page-hero p {
+  max-width:
+    700px;
+
+  margin:
+    1.3rem
+    0
+    0;
+
+  color:
+    var(--cabo-muted);
+
+  font-size:
+    1.05rem;
+
+  line-height:
+    1.7;
+}
+
+/* =========================================================
+   INSTITUTIONAL PAGE BODY
+   ========================================================= */
+
+.cn-page-body {
+  width:
+    min(1080px, calc(100% - 48px));
+
+  margin:
+    0
+    auto;
+
+  padding:
+    2.3rem
+    0
+    5rem;
+}
+
+/* =========================================================
+   EXPANDABLE CONTENT
+   ========================================================= */
+
+.cn-detail-list {
+  margin-top:
+    2rem;
+}
+
+.cn-detail {
+  border-top:
+    1px solid
+    rgba(181, 138, 40, 0.34);
+}
+
+.cn-detail:last-child {
+  border-bottom:
+    1px solid
+    rgba(181, 138, 40, 0.34);
+}
+
+.cn-detail summary {
+  min-height:
+    72px;
+
+  box-sizing:
+    border-box;
+
+  padding:
+    0.85rem
+    0.2rem;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    42px
+    1fr
+    24px;
+
+  align-items:
+    center;
+
+  gap:
+    0.9rem;
+
+  color:
+    var(--cabo-green);
+
+  list-style:
+    none;
+
+  cursor:
+    pointer;
+}
+
+.cn-detail summary::-webkit-details-marker {
+  display:
+    none;
+}
+
+.cn-detail summary:hover {
+  background:
+    rgba(181, 138, 40, 0.035);
+}
+
+.cn-detail-number {
+  color:
+    var(--cabo-gold);
+
+  font-size:
+    0.63rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.14em;
+}
+
+.cn-detail-heading {
+  min-width:
+    0;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+}
+
+.cn-detail-heading strong {
+  color:
+    var(--cabo-green);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    1.12rem;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.18;
+}
+
+.cn-detail-heading small {
+  margin-top:
+    0.18rem;
+
+  color:
+    var(--cabo-muted);
+
+  font-size:
+    0.68rem;
+
+  line-height:
+    1.4;
+}
+
+.cn-detail-toggle {
+  color:
+    var(--cabo-gold);
+
+  font-size:
+    1rem;
+
+  text-align:
+    right;
+}
+
+.cn-detail[open] .cn-detail-toggle {
+  transform:
+    rotate(45deg);
+}
+
+.cn-detail-body {
+  max-width:
+    860px;
+
+  padding:
+    0.2rem
+    4rem
+    1.55rem
+    42px;
+
+  color:
+    #4f5853;
+
+  font-size:
+    0.92rem;
+
+  line-height:
+    1.72;
+}
+
+.cn-detail-body p {
+  margin:
+    0.72rem
+    0;
+
+  text-align:
+    justify;
+
+  text-justify:
+    inter-word;
+}
+
+.cn-detail-body p:first-child {
+  margin-top:
+    0;
+}
+
+.cn-detail-body ul,
+.cn-detail-body ol {
+  margin:
+    0.75rem
+    0;
+
+  padding-left:
+    1.25rem;
+
+  color:
+    #4f5853;
+
+  font-size:
+    0.9rem;
+
+  line-height:
+    1.6;
+}
+
+.cn-detail-body li + li {
+  margin-top:
+    0.22rem;
+}
+
+.cn-detail-body .cn-card-link {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    0.45rem;
+
+  margin-top:
+    0.55rem;
+
+  color:
+    var(--cabo-green);
+
+  font-size:
+    0.78rem;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
+}
+
+.cn-detail-body .cn-card-link:hover {
+  color:
+    var(--cabo-gold);
+
+  text-decoration:
+    none;
+}
+
+.cn-detail-body .cn-card-link span {
+  color:
+    var(--cabo-gold);
+}
+
+.cn-card-closing {
+  color:
+    var(--cabo-green) !important;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    1.05rem !important;
+}
+
+.cn-detail-body blockquote {
+  margin:
+    1.15rem
+    0
+    0;
+
+  padding:
+    0
+    0
+    0
+    1rem;
+
+  border-left:
+    2px solid
+    var(--cabo-gold);
+
+  color:
+    var(--cabo-green);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    1.02rem;
+
+  font-style:
+    italic;
+
+  line-height:
+    1.5;
+}
+
+.cn-motto-display {
+  margin:
+    0.15rem
+    0
+    0.7rem !important;
+
+  color:
+    var(--cabo-gold) !important;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    1.15rem !important;
+}
+
+.cn-symbol-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap:
+    1px;
+
+  margin-top:
+    1rem;
+
+  border:
+    1px solid
+    rgba(181, 138, 40, 0.25);
+
+  background:
+    rgba(181, 138, 40, 0.25);
+}
+
+.cn-symbol-grid > div {
+  min-width:
+    0;
+
+  padding:
+    0.82rem
+    0.9rem;
+
+  background:
+    rgba(255, 252, 246, 0.88);
+}
+
+.cn-symbol-grid strong,
+.cn-symbol-grid span {
+  display:
+    block;
+}
+
+.cn-symbol-grid strong {
+  color:
+    var(--cabo-green);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    0.88rem;
+}
+
+.cn-symbol-grid span {
+  margin-top:
+    0.18rem;
+
+  color:
+    var(--cabo-muted);
+
+  font-size:
+    0.7rem;
+
+  line-height:
+    1.35;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.cn-page-body table {
+  width:
+    100%;
+
+  margin:
+    1.8rem
+    0;
+
+  border-collapse:
+    collapse;
+
+  font-size:
+    0.9rem;
+}
+
+.cn-page-body th,
+.cn-page-body td {
+  padding:
+    0.8rem
+    0.9rem;
+
+  border:
+    1px solid
+    rgba(181, 138, 40, 0.22);
+
+  text-align:
+    left;
+}
+
+.cn-page-body th {
+  color:
+    var(--cabo-green);
+
+  background:
+    rgba(181, 138, 40, 0.06);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-weight:
+    600;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+  position:
+    relative;
+
+  flex:
+    0 0 auto;
+
+  padding:
+    1.45rem
+    1rem
+    1rem;
+
+  background:
+    var(--cabo-green-deep);
+
+  color:
+    #f5f2e8;
+
+  border-top:
+    1px solid
+    rgba(181, 138, 40, 0.30);
+
+  text-align:
+    center;
+}
+
+.footer::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  top:
+    0;
+
+  left:
+    50%;
+
+  width:
+    130px;
+
+  height:
+    1px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    rgba(201, 160, 76, 0.72);
+}
+
+.footer__links {
+  display:
+    none !important;
+}
+
+.footer__bottom {
+  width:
+    100%;
+
+  margin:
+    0;
+
+  padding:
+    0;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+}
+
+.footer__bottom::before {
+  content:
+    '✦';
+
+  display:
+    block;
+
+  margin:
+    0
+    auto
+    0.25rem;
+
+  color:
+    var(--cabo-gold-light);
+
+  font-size:
+    0.68rem;
+
+  line-height:
+    1;
+}
+
+.footer__bottom::after {
+  content:
+    'Cabo Norte · Labor et Mare';
+
+  display:
+    block;
+
+  margin-bottom:
+    0.28rem;
+
+  color:
+    #f5f2e8;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    0.82rem;
+
+  font-weight:
+    500;
+}
+
+.footer__copyright {
+  margin:
+    0;
+
+  color:
+    rgba(245, 242, 232, 0.43);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    0.62rem;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .cn-page-hero {
+    padding:
+      3.5rem
+      1rem
+      2.8rem;
+  }
+
+  .cn-page-hero h1 {
+    font-size:
+      clamp(3.2rem, 16vw, 5rem);
+  }
+
+  .cn-page-body {
+    width:
+      min(
+        calc(100% - 32px),
+        1080px
+      );
+
+    padding-bottom:
+      3.5rem;
+  }
+
+  .cn-detail-body {
+    padding:
+      0.15rem
+      0.25rem
+      1.35rem
+      42px;
+  }
+
+  .cn-detail-body p {
+    text-align:
+      left;
+  }
+
+  .cn-symbol-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .cn-page-body table {
+    display:
+      block;
+
+    overflow-x:
+      auto;
+  }
+
+  .footer {
+    padding:
+      1.45rem
+      1rem
+      1rem;
+  }
+
+  .footer__bottom::after {
+    font-size:
+      0.78rem;
+  }
+
+  .footer__copyright {
+    font-size:
+      0.6rem;
+  }
+
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width:
+    10px;
+}
+
+::-webkit-scrollbar-track {
+  background:
+    var(--cabo-green-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    rgba(181, 138, 40, 0.55);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    rgba(181, 138, 40, 0.75);
 }

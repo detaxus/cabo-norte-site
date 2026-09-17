@@ -1,0 +1,179 @@
+.hero {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding:
+    clamp(3.2rem, 6vw, 5rem)
+    2rem
+    clamp(2.7rem, 5vw, 4rem);
+
+  background:
+    var(--cabo-paper);
+
+  border-bottom:
+    1px solid
+    rgba(181, 138, 40, 0.24);
+}
+
+.inner {
+  width:
+    min(1080px, 100%);
+
+  margin:
+    0 auto;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  color:
+    var(--cabo-gold);
+
+  font-size:
+    0.66rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.2em;
+
+  text-transform:
+    uppercase;
+}
+
+.number {
+  opacity: 0.72;
+}
+
+.divider {
+  width: 22px;
+  height: 1px;
+
+  background:
+    var(--cabo-gold);
+
+  opacity: 0.62;
+}
+
+.eyebrow {
+  color:
+    var(--cabo-green);
+
+  opacity: 0.8;
+}
+
+.ornament {
+  width:
+    min(210px, 34vw);
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    0.65rem;
+
+  margin:
+    1.35rem
+    0
+    0.7rem;
+}
+
+.ornament span {
+  height: 1px;
+  flex: 1;
+
+  background:
+    rgba(181, 138, 40, 0.48);
+}
+
+.ornament b {
+  color:
+    var(--cabo-gold);
+
+  font-size:
+    0.65rem;
+
+  font-weight:
+    500;
+
+  line-height:
+    1;
+}
+
+.hero h1 {
+  margin:
+    0;
+
+  color:
+    var(--cabo-green);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(3rem, 6vw, 5.2rem);
+
+  font-weight:
+    500;
+
+  line-height:
+    0.98;
+
+  letter-spacing:
+    -0.045em;
+}
+
+.hero p {
+  max-width:
+    720px;
+
+  margin:
+    1.1rem
+    0
+    0;
+
+  color:
+    var(--cabo-muted);
+
+  font-size:
+    1rem;
+
+  line-height:
+    1.65;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding:
+      2.8rem
+      1.25rem
+      2.5rem;
+  }
+
+  .ornament {
+    width:
+      min(160px, 45vw);
+
+    margin-top:
+      1.1rem;
+  }
+
+  .hero h1 {
+    font-size:
+      clamp(2.7rem, 12vw, 4rem);
+  }
+
+  .hero p {
+    font-size:
+      0.94rem;
+  }
+}

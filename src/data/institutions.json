@@ -1,0 +1,11 @@
+{
+  "institutions": [],
+  "districts": [
+    {
+      "id": "IVAL",
+      "name": "Ival",
+      "status": "active",
+      "founded": true
+    }
+  ]
+}

@@ -1,0 +1,536 @@
+/* =========================================================
+   CABO NORTE — CITIZENSHIP APPLICATION FORM
+   ========================================================= */
+
+.cn-citizenship-application {
+  margin:
+    2.8rem 0 0;
+
+  padding:
+    2rem;
+
+  background:
+    #f5f2e8;
+
+  border:
+    1px solid
+    #b58a28;
+
+  box-sizing:
+    border-box;
+}
+
+.cn-citizenship-application-header {
+  max-width:
+    700px;
+
+  margin:
+    0 auto 2rem;
+
+  text-align:
+    center;
+}
+
+.cn-form-ornament {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    0.5rem;
+
+  margin-bottom:
+    0.65rem;
+}
+
+.cn-form-ornament span {
+  width:
+    80px;
+
+  height:
+    1px;
+
+  background:
+    rgba(181, 138, 40, 0.58);
+}
+
+.cn-form-ornament b {
+  color:
+    #b58a28;
+
+  font-size:
+    0.7rem;
+}
+
+.cn-form-eyebrow {
+  color:
+    #b58a28;
+
+  font-size:
+    0.62rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.18em;
+
+  text-transform:
+    uppercase;
+}
+
+.cn-citizenship-application-header h2 {
+  margin:
+    0.4rem 0 0;
+
+  color:
+    #18352b;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    1.7rem;
+
+  font-weight:
+    600;
+}
+
+.cn-citizenship-application-header p {
+  max-width:
+    620px;
+
+  margin:
+    0.7rem auto 0;
+
+  color:
+    #1b211e;
+
+  font-size:
+    0.8rem;
+
+  line-height:
+    1.65;
+}
+
+.cn-citizenship-form {
+  width:
+    min(780px, 100%);
+
+  margin:
+    0 auto;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    1.35rem;
+}
+
+.cn-form-group {
+  margin:
+    0;
+
+  padding:
+    1.2rem;
+
+  border:
+    1px solid
+    rgba(24, 53, 43, 0.18);
+
+  background:
+    rgba(255, 255, 255, 0.52);
+}
+
+.cn-form-group legend {
+  padding:
+    0 0.45rem;
+
+  color:
+    #b58a28;
+
+  font-size:
+    0.65rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.14em;
+
+  text-transform:
+    uppercase;
+}
+
+.cn-form-group > .cn-form-field {
+  margin-top:
+    1rem;
+}
+
+.cn-form-group > .cn-form-field:first-of-type {
+  margin-top:
+    0.25rem;
+}
+
+.cn-form-field {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    0.42rem;
+}
+
+.cn-form-field label,
+.cn-form-label {
+  color:
+    #18352b;
+
+  font-size:
+    0.65rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.1em;
+
+  text-transform:
+    uppercase;
+}
+
+.cn-form-help {
+  color:
+    #1b211e;
+
+  font-size:
+    0.72rem;
+
+  line-height:
+    1.55;
+}
+
+.cn-form-field input:not([type="checkbox"]):not([type="radio"]),
+.cn-form-field textarea,
+.cn-form-field select {
+  width:
+    100%;
+
+  box-sizing:
+    border-box;
+
+  padding:
+    0.78rem;
+
+  border:
+    1px solid
+    rgba(24, 53, 43, 0.28);
+
+  border-radius:
+    2px;
+
+  background:
+    #ffffff;
+
+  color:
+    #1b211e;
+
+  font:
+    inherit;
+
+  font-size:
+    0.84rem;
+
+  line-height:
+    1.5;
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.cn-form-field textarea {
+  resize:
+    vertical;
+
+  min-height:
+    130px;
+}
+
+.cn-form-field input:not([type="checkbox"]):not([type="radio"]):focus,
+.cn-form-field textarea:focus,
+.cn-form-field select:focus {
+  outline:
+    none;
+
+  border-color:
+    #b58a28;
+
+  box-shadow:
+    0 0 0 2px
+    rgba(181, 138, 40, 0.12);
+}
+
+.cn-choice-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    0.55rem;
+}
+
+.cn-choice-inline {
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    0.8rem;
+
+  margin-top:
+    0.2rem;
+}
+
+.cn-choice {
+  display:
+    flex;
+
+  align-items:
+    flex-start;
+
+  gap:
+    0.55rem;
+
+  padding:
+    0.62rem 0.7rem;
+
+  border:
+    1px solid
+    rgba(24, 53, 43, 0.14);
+
+  background:
+    #ffffff;
+
+  color:
+    #1b211e;
+
+  font-size:
+    0.76rem;
+
+  line-height:
+    1.4;
+
+  cursor:
+    pointer;
+}
+
+.cn-choice:hover {
+  border-color:
+    rgba(181, 138, 40, 0.65);
+}
+
+.cn-choice input,
+.cn-confirmation input {
+  flex:
+    0 0 auto;
+
+  margin-top:
+    0.18rem;
+
+  accent-color:
+    #18352b;
+}
+
+.cn-confirmation {
+  display:
+    flex;
+
+  align-items:
+    flex-start;
+
+  gap:
+    0.7rem;
+
+  color:
+    #1b211e;
+
+  font-size:
+    0.78rem;
+
+  line-height:
+    1.6;
+
+  cursor:
+    pointer;
+}
+
+.cn-commitment {
+  margin:
+    1rem 0;
+
+  padding:
+    1rem;
+
+  border-left:
+    3px solid
+    #b58a28;
+
+  background:
+    #ffffff;
+}
+
+.cn-commitment strong {
+  display:
+    block;
+
+  margin-bottom:
+    0.4rem;
+
+  color:
+    #18352b;
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.1em;
+
+  text-transform:
+    uppercase;
+}
+
+.cn-commitment p {
+  margin:
+    0;
+
+  color:
+    #1b211e;
+
+  font-size:
+    0.78rem;
+
+  line-height:
+    1.65;
+}
+
+.cn-citizenship-submit {
+  align-self:
+    flex-start;
+
+  min-height:
+    44px;
+
+  padding:
+    0.65rem 1.2rem;
+
+  border:
+    1px solid
+    #b58a28;
+
+  border-radius:
+    3px;
+
+  background:
+    #18352b;
+
+  color:
+    #f5f2e8;
+
+  font-size:
+    0.7rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.04em;
+
+  cursor:
+    pointer;
+}
+
+.cn-citizenship-submit:hover {
+  background:
+    #b58a28;
+
+  color:
+    #ffffff;
+}
+
+.cn-citizenship-submit:disabled {
+  opacity:
+    0.62;
+
+  cursor:
+    wait;
+}
+
+.cn-form-message {
+  padding:
+    0.8rem 1rem;
+
+  border-left:
+    4px solid
+    #b58a28;
+
+  background:
+    #ffffff;
+
+  color:
+    #1b211e;
+
+  font-size:
+    0.76rem;
+
+  line-height:
+    1.5;
+}
+
+.cn-form-success {
+  border-left-color:
+    #b58a28;
+}
+
+.cn-form-error {
+  border-left-color:
+    #18352b;
+}
+
+@media (max-width: 700px) {
+
+  .cn-citizenship-application {
+    padding:
+      1.25rem;
+  }
+
+  .cn-choice-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .cn-citizenship-submit {
+    width:
+      100%;
+  }
+
+}

@@ -1,0 +1,232 @@
+/* =========================================================
+   CABO NORTE — SECTION CARDS
+   ========================================================= */
+
+.cn-detail-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cn-detail {
+  min-width: 0;
+  margin: 0;
+  border: 1px solid rgba(181, 138, 40, 0.28);
+  background: rgba(255, 255, 255, 0.38);
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.cn-detail:hover {
+  border-color: rgba(181, 138, 40, 0.52);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.cn-detail[open] {
+  grid-column: 1 / -1;
+  border-color: rgba(181, 138, 40, 0.52);
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow:
+    0 10px 30px rgba(24, 53, 43, 0.055);
+}
+
+.cn-detail summary {
+  min-height: 154px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) 26px;
+  align-items: center;
+  gap: 1.1rem;
+
+  padding: 1.35rem 1.4rem;
+
+  color: var(--cabo-green);
+
+  list-style: none;
+  cursor: pointer;
+}
+
+.cn-detail summary:hover {
+  background: rgba(181, 138, 40, 0.035);
+}
+
+.cn-detail summary::-webkit-details-marker {
+  display: none;
+}
+
+.cn-detail-number {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(181, 138, 40, 0.56);
+
+  color: var(--cabo-gold);
+
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.cn-detail-number::before {
+  content: '✦';
+  display: block;
+  margin-bottom: 0.22rem;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.cn-detail-heading {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cn-detail-heading strong {
+  color: var(--cabo-green);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.22rem;
+  font-weight: 600;
+  line-height: 1.18;
+}
+
+.cn-detail-heading small {
+  display: none;
+}
+
+.cn-detail-toggle {
+  color: var(--cabo-gold);
+
+  font-size: 1.25rem;
+  font-weight: 400;
+
+  text-align: center;
+}
+
+.cn-detail[open] .cn-detail-toggle {
+  transform: rotate(45deg);
+}
+
+.cn-detail-body {
+  max-width: 900px;
+
+  padding:
+    0.2rem
+    4rem
+    1.85rem
+    6.55rem;
+
+  color: #4f5853;
+
+  font-size: 0.94rem;
+  line-height: 1.72;
+}
+
+.cn-detail-body p {
+  margin: 0.72rem 0;
+
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.cn-detail-body p:first-child {
+  margin-top: 0;
+}
+
+.cn-detail-body ul,
+.cn-detail-body ol {
+  margin: 0.75rem 0;
+  padding-left: 1.3rem;
+
+  color: #4f5853;
+
+  font-size: 0.92rem;
+  line-height: 1.62;
+}
+
+.cn-detail-body li + li {
+  margin-top: 0.22rem;
+}
+
+@media (max-width: 800px) {
+  .cn-detail-list {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .cn-detail[open] {
+    grid-column: 1;
+  }
+
+  .cn-detail summary {
+    min-height: 126px;
+
+    grid-template-columns: 54px minmax(0, 1fr) 22px;
+    gap: 0.85rem;
+
+    padding: 1.05rem;
+  }
+
+  .cn-detail-number {
+    width: 54px;
+    height: 54px;
+  }
+
+  .cn-detail-heading strong {
+    font-size: 1.08rem;
+  }
+
+  .cn-detail-body {
+    padding:
+      0.15rem
+      1.1rem
+      1.45rem
+      1.1rem;
+  }
+}
+
+/* =========================================================
+   CABO NORTE — BORDAS DOURADAS DAS CAIXAS
+   ========================================================= */
+
+.cn-detail,
+.cn-detail:hover,
+.cn-detail:focus,
+.cn-detail:focus-within,
+.cn-detail[open] {
+  border-color: var(--cabo-gold) !important;
+}
+
+.cn-detail summary,
+.cn-detail summary:hover,
+.cn-detail summary:focus,
+.cn-detail summary:focus-visible {
+  outline: none;
+  border-color: transparent;
+}
+
+.cn-detail summary {
+  box-shadow: none;
+}
+
+.cn-detail[open] summary {
+  border-bottom: 1px solid var(--cabo-gold);
+}
+
