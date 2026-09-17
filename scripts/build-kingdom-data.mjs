@@ -64,11 +64,24 @@ function ensureArray(
    RAW DATA
    ========================================================= */
 
-const citizensData =
-  readJson(
-    'citizens.json',
-    privateDataDir
+const privateCitizensPath =
+  path.join(
+    privateDataDir,
+    'citizens.json'
   );
+
+const citizensData =
+  fs.existsSync(
+    privateCitizensPath
+  )
+    ? readJson(
+        'citizens.json',
+        privateDataDir
+      )
+    : readJson(
+        'citizens.json',
+        dataDir
+      );
 
 const diplomacyData =
   readJson(
